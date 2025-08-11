@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Menu</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        .menu-container{
+            display: grid;
+            grid-templete-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .menu-item{
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .menu-item h3{
+            margin: 0;
+        }
+        .menu-item p{
+            color: grey;
+        }
+        .menu-item span{
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Restaurant Menu</h1>
+<div class="menu-container" id="menu-list">
+    <p>Loading menu...</p>
+</div>
+
+<script>
+    fetch('/api/menu/')
+        .then(response => response.json())
+        .then(data => {
+            let menuList=document.getElementById('menu-list');
+            menuList.innerHTML = '';
+            
+            data.forEach(item => {
+                menuList.innerHTML +=`
+                    <div class="menu-item">
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                        <span>$${item.price}</span>
+                    </div>
+                `;
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching menu:'.error);
+            document.getElementById('menu-list').innerHTML = '<p>Failed to Load Menu</p>'
+        });
+</script>
+
+</body>
+</html>
