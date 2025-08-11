@@ -9,6 +9,8 @@ from .serializers import ItemSerializer
 '''
 NOTE: Conside this as a reference and follow this same coding structure or format to work on you tasks
 '''
+class homepage(request):
+    return render(request, 'homepage.html')
 
 class ItemView(APIView):
 
