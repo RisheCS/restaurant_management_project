@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ restaurant_name }} - Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;; 
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        nav {
+            background-color: #343a40;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav h1 {
+            color: #fff;
+            font-size: 24px;
+            margin: 0;
+        }
+        nav a {
+            color: #f8f9fa;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #ff6f61, #ffcc70);
+            color: white;
+        }
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background-color: #343a40;
+            color: #fff
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #212529;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: #bbb;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>{{ restaurant_name }}</h1>
+        <div>
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/menu/">Menu</a>
+            <a href="/orders/">Orders</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h2>Welcome to {{ restaurant_name }}</h2>
+        <p>Delicious meals, quick service, and a warm dining experience. Order online or visit us today!</p>
+        <a href="/menu/" class="btn">Explore Menu</a>
+    </section>
+
+    <footer>
+        &copy; 2025 {{ restaurant_name }}. All Rights Reserved.
+    </footer>
+</body>
+</html>
