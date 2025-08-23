@@ -12,6 +12,12 @@
             color: #333;
         }
 
+        header {
+            background-color: #ff7043;
+            color: white;
+            padding: 20px 0;
+        }
+
         nav {
             background-color: #343a40;
             padding: 15px 20px;
@@ -50,15 +56,19 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        .content {
+            padding: 40px 20px;
+        }
         .btn {
             display: inline-block;
             margin-top: 25px;
             padding: 12px 25px;
-            background-color: #343a40;
-            color: #fff
+            background-color: #28a745;
+            color: white;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            transition: background 0.3s ease;
         }
         .btn:hover {
             background-color: #212529;
@@ -68,13 +78,13 @@
             text-align: center;
             padding: 20px;
             background-color: #343a40;
-            color: #bbb;
+            color: white;
             margin-top: 50px;
         }
     </style>
 </head>
 <body>
-    <nav>
+    <header>
         <h1>{{ restaurant_name }}</h1>
         <div>
             <a href="/">Home</a>
@@ -82,13 +92,13 @@
             <a href="/menu/">Menu</a>
             <a href="/orders/">Orders</a>
         </div>
-    </nav>
+    </header>
 
-    <section class="hero">
+    <div class="content">
         <h2>Welcome to {{ restaurant_name }}</h2>
         <p>Delicious meals, quick service, and a warm dining experience. Order online or visit us today!</p>
         <a href="/menu/" class="btn">Explore Menu</a>
-    </section>
+    </div>
 
     <footer>
         &copy; 2025 {{ restaurant_name }}. All Rights Reserved.
